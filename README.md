@@ -47,13 +47,12 @@ The method is used to verify the received purchase data and the corresponding si
 
 Parameters (*all parameters are mandatory*):
 
-* **productId** is a string which indicates the desired Product ID
+* **data** is a data string to verify
 * **signature** is a signature string received on purchase
 
 Returns:
 
 * Either **true** or **false**
-* More information: [Huawei Developers](https://developer.huawei.com/consumer/en/doc/development/HMS-References/iap-obtain-application-level-AT-v4)
 
 ## verifyProduct
 

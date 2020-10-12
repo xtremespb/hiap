@@ -1,6 +1,6 @@
 {
     "name": "hiap",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "HUAWEI In-App Purchase Server Tools",
     "main": "index.js",
     "scripts": {

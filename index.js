@@ -27,7 +27,7 @@ module.exports = class {
         try {
             const publicKey = `-----BEGIN PUBLIC KEY-----\n${this.config.publicKey}\n-----END PUBLIC KEY-----`;
             const verifier = crypto.createVerify("sha256WithRSAEncryption");
-            verifier.update(data);
+            verifier.update(new Buffer.from(data, "base64"));
             return verifier.verify(publicKey, signature);
         } catch (e) {
             return e;

@@ -19,7 +19,7 @@ module.exports = class {
             });
             return res.data.access_token;
         } catch (e) {
-            return null;
+            return e;
         }
     }
 
@@ -30,7 +30,7 @@ module.exports = class {
             verifier.update(data);
             return verifier.verify(publicKey, signature);
         } catch (e) {
-            return false;
+            return e;
         }
     }
 
@@ -56,7 +56,7 @@ module.exports = class {
                     responseCode: parseInt(res.data.responseCode, 10)
                 };
             }
-            return null;
+            return res.data;
         } catch (e) {
             if (e && e.response && e.response.data && e.response.data.responseCode === "6" && !repeat) {
                 return this.verifyProduct(productId, purchaseToken, true);
@@ -88,7 +88,7 @@ module.exports = class {
                     responseCode: parseInt(res.data.responseCode, 10)
                 };
             }
-            return null;
+            return res.data;
         } catch (e) {
             if (e && e.response && e.response.data && e.response.data.responseCode === "6" && !repeat) {
                 return this.getCancelledProducts(startAt, maxRows, continuationToken, true);
